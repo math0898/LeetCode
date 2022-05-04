@@ -39,7 +39,7 @@ Merge arrays to a sorted array then compute median.
 
 [Submission](https://leetcode.com/submissions/detail/693261980/)
 
-Commit: 30501c0242c1dfc2e002fa1de61a6da981289371
+[Commit](https://github.com/math0898/LeetCode/tree/30501c0242c1dfc2e002fa1de61a6da981289371)
 
 ## Approach 2: O(log (m+n))
 
