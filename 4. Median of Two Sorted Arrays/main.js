@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-const findMedianSortedArrays = require('./medianSortedArrays').default;
+const findMedianSortedArrays = require('./medianSortedArrays');
 
 function sort (a, b) { return a - b } 
 var n = prompt('Array 1 size: ');

@@ -1,4 +1,4 @@
-const findMedianSortedArrays = require('./medianSortedArrays').default;
+const findMedianSortedArrays = require('./medianSortedArrays');
 
 test('Example 1', () => {
     expect(findMedianSortedArrays([1, 3], [2])).toBe(2);
