@@ -25,7 +25,6 @@ function findMedianSortedArrays (nums1, nums2) {
     // Admittedly difficult to maintain.
     while (nums1_i < nums1.length) merged.push(nums1[nums1_i++]);
     while (nums2_i < nums2.length) merged.push(nums2[nums2_i++]);
-    console.log(merged);
     // Compute median
     if (merged.length % 2 == 0) median = (merged[(merged.length / 2) - 1] + merged[(merged.length / 2)]) / 2;
     else median = merged[(merged.length - 1) / 2];
