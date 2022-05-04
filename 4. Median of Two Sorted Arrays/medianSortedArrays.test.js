@@ -7,3 +7,7 @@ test('Example 1', () => {
 test('Example 2', () => {
     expect(findMedianSortedArrays([1, 2], [3, 4])).toBe(2.5);
 });
+
+test('Random Numbers', () =>{
+    expect(findMedianSortedArrays([6, 12, 13, 72, 1056], [20, 45, 57, 96, 20000])).toBe(51);
+});
