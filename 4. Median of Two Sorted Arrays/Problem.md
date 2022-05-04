@@ -32,3 +32,5 @@ __Constraints:__
 ```
 
 [Median of Two Sorted Arrays on LeetCode](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+
+[Submission](https://leetcode.com/submissions/detail/693261980/)
