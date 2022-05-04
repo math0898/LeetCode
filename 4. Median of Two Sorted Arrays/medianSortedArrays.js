@@ -5,7 +5,7 @@
  * @param {number[]} nums2 The second input array.
  * @return {number} The median value of the two arrays.
  */
- function findMedianSortedArrays (nums1, nums2) {
+function findMedianSortedArrays (nums1, nums2) {
     var median = 0;
 
     /*
