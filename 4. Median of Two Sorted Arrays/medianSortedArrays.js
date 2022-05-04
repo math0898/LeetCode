@@ -12,26 +12,20 @@ function findMedianSortedArrays (nums1, nums2) {
      * Approach 1: O(n + m). Merge arrays to a sorted array then compute median.
      */
     var merged = [];
-    var nums1I = 0;
-    var nums2I = 0;
-    for (var i = 0; i < nums1.length + nums2.length; i++) {
-        if (nums1I == nums1.length) {
-            merged.push(nums2[nums2I]);
-            nums2I++;
-            continue;
-        } else if (nums2I == nums2.length) {
-            merged.push(nums1[nums1I]);
-            nums1I++;
-            continue;
-        }
-        if (nums1[nums1I] < nums2[nums2I]) {
-            merged.push(nums1[nums1I]);
-            nums1I++;
-        } else { // TODO: Case where the two terms are equal... no duplicates in merged array.
-            merged.push(nums2[nums2I]);
-            nums2I++;
-        }
+    var nums1_i = 0;
+    var nums2_i = 0;
+    // Merge
+    while (nums1_i < nums1.length && nums2_i < nums2.length) {
+        if (nums1[nums1_i] < nums2[nums2_i]) merged.push(nums1[nums1_i++]);
+        else if (nums1[nums1_i] == nums2[nums2_i]) {
+            merged.push(nums1[nums1_i++]);
+            nums2_i++;
+        } else merged.push(nums2[nums2_i++]);
     }
+    // Admittedly difficult to maintain.
+    while (nums1_i < nums1.length) merged.push(nums1[nums1_i++]);
+    while (nums2_i < nums2.length) merged.push(nums2[nums2_i++]);
+    console.log(merged);
     // Compute median
     if (merged.length % 2 == 0) median = (merged[(merged.length / 2) - 1] + merged[(merged.length / 2)]) / 2;
     else median = merged[(merged.length - 1) / 2];
