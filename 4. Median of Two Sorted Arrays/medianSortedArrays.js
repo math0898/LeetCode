@@ -32,7 +32,6 @@ function findMedianSortedArrays (nums1, nums2) {
             nums2I++;
         }
     }
-    console.log(merged);
     // Compute median
     if (merged.length % 2 == 0) median = (merged[(merged.length / 2) - 1] + merged[(merged.length / 2)]) / 2;
     else median = merged[(merged.length - 1) / 2];

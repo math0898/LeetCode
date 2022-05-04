@@ -3,6 +3,7 @@
         "test": "jest"
     },
     "dependencies": {
+        "jest": "^28.0.3",
         "prompt-sync": "^4.2.0"
     }
 }
