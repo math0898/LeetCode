@@ -17,10 +17,7 @@ function findMedianSortedArrays (nums1, nums2) {
     // Merge
     while (nums1_i < nums1.length && nums2_i < nums2.length) {
         if (nums1[nums1_i] < nums2[nums2_i]) merged.push(nums1[nums1_i++]);
-        else if (nums1[nums1_i] == nums2[nums2_i]) {
-            merged.push(nums1[nums1_i++]);
-            nums2_i++;
-        } else merged.push(nums2[nums2_i++]);
+        else merged.push(nums2[nums2_i++]);
     }
     // Admittedly difficult to maintain.
     while (nums1_i < nums1.length) merged.push(nums1[nums1_i++]);
