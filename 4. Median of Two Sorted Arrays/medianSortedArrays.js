@@ -34,19 +34,19 @@ function approach1 (nums1, nums2) {
     else return merged[(merged.length - 1) / 2];
 }
 
-/**
- * Approach 2: O(log(n+m)). Binary search each array in place to the one or two elements in the middle.
- * 
- * @param {number[]} nums1 The first input array.
- * @param {number[]} nums2 The second input array.
- * @return {number} The median value of the two arrays.
- */
-function approach2 (nums1, nums2) {
-    var mid1 = nums1[Math.floor(nums1.length / 2)];
-    var mid2 = nums2[Math.floor(nums2.length / 2)];
+// /**
+//  * Approach 2: O(log(n+m)). Binary search each array in place to the one or two elements in the middle.
+//  * 
+//  * @param {number[]} nums1 The first input array.
+//  * @param {number[]} nums2 The second input array.
+//  * @return {number} The median value of the two arrays.
+//  */
+// function approach2 (nums1, nums2) {
+//     var mid1 = nums1[Math.floor(nums1.length / 2)];
+//     var mid2 = nums2[Math.floor(nums2.length / 2)];
 
-    if (nums1.length + nums2.length % 2 === 0) median = (mid1 + mid2) / 2;
-    else median = mid1 < mid2 ? mid1 : mid2;
-    console.log(mid1 + " && " + mid2 + " => " + median);
-    return median;
-}
+//     if (nums1.length + nums2.length % 2 === 0) median = (mid1 + mid2) / 2;
+//     else median = mid1 < mid2 ? mid1 : mid2;
+//     console.log(mid1 + " && " + mid2 + " => " + median);
+//     return median;
+// }

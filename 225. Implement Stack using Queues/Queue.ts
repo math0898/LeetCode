@@ -120,7 +120,7 @@ export class Queue {
             toReturn += current!.data;
             current = current!.next;
         }
-        while (current!.next != null) {
+        while (current != null) {
             toReturn += ", " + current!.data;
             current = current!.next;
         }
