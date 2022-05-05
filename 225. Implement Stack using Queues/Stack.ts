@@ -38,7 +38,7 @@ export class MyStack {
             var n = this.queue.pop();
             if (n != null) this.queue.push(n);
         }
-        return this.queue.pop();
+        return this.queue.pop()!;
     }
 
     /**
@@ -52,8 +52,8 @@ export class MyStack {
             if (n != null) this.queue.push(n);
         }
         var n = this.queue.pop();
-        this.queue.push(n);
-        return n;
+        this.queue.push(n!);
+        return n!;
     }
 
     /**
@@ -63,5 +63,14 @@ export class MyStack {
      */
     empty (): boolean {
         return this.queue.empty();
+    }
+
+    /**
+     * Converts stack into a string. Lazy implementation which simply calls this on the queue.
+     * 
+     * @return This stack in the form of a string.
+     */
+    toString (): string {
+        return this.queue.toString();
     }
 }

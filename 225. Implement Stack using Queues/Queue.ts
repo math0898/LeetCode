@@ -13,7 +13,7 @@ class Node {
     /**
      * Either null or the next node in the sequence.
      */
-    public next:Node;
+    public next:Node | null;
 
     /**
      * Creates a new Node with the given number value.
@@ -36,7 +36,7 @@ export class Queue {
     /**
      * The head node for the queue.
      */
-    private head:Node;
+    private head:Node | null;
 
     /**
      * The length of the queue.
@@ -103,7 +103,27 @@ export class Queue {
             this.head = new Node(n);
             return;
         }
-        while (current.next != null) current = current.next;
-        current.next = new Node(n);
+        while (current!.next != null) current = current!.next;
+        current!.next = new Node(n);
+    }
+
+    /**
+     * Returns this queue in the form of a string.
+     * 
+     * @return the queue in a string form.
+     */
+    toString (): string {
+        var toReturn:string = "";
+        var current = this.head;
+        if (this.head == null) return "Empty Queue";
+        else {
+            toReturn += current!.data;
+            current = current!.next;
+        }
+        while (current!.next != null) {
+            toReturn += ", " + current!.data;
+            current = current!.next;
+        }
+        return toReturn;
     }
 }
