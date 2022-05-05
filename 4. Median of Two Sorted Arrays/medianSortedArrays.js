@@ -6,8 +6,8 @@
  * @return {number} The median value of the two arrays.
  */
 function findMedianSortedArrays (nums1, nums2) {
-    // return approach1(nums1, nums2);
-    return approach2(nums1, nums2);
+    return approach1(nums1, nums2);
+    // return approach2(nums1, nums2);
 } module.exports = findMedianSortedArrays;
 
 /**
