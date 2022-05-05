@@ -1,4 +1,32 @@
 /**
+ * A simple node which contains data and made hold a path to a next item.
+ * 
+ * @author Sugaku
+ */
+class Node {
+
+    /**
+     * The data being stored in this node.
+     */
+    public data:number;
+
+    /**
+     * Either null or the next node in the sequence.
+     */
+    public next:Node;
+
+    /**
+     * Creates a new Node with the given number value.
+     * 
+     * @param n The number value to store in this node.
+     */
+    constructor (n:number) {
+        this.data = n;
+        this.next = null;
+    }
+}
+
+/**
  * Basic implementation of a Queue.
  * 
  * @author Sugaku
@@ -6,10 +34,21 @@
 export class Queue {
 
     /**
+     * The head node for the queue.
+     */
+    private head:Node;
+
+    /**
+     * The length of the queue.
+     */
+    private length:number; 
+
+    /**
      * Creates an empty queue.
      */
     constructor () {
-
+        this.length = 0;
+        this.head = null;
     }
 
     /**
@@ -18,7 +57,7 @@ export class Queue {
      * @returns True if the queue contains no elements, otherwise false.
      */
     empty (): boolean {
-        return false;
+        return this.length == 0;
     }
 
     /**
@@ -27,7 +66,7 @@ export class Queue {
      * @returns The size of the queue.
      */
     size (): number {
-        return 1;
+        return this.length;
     }
 
     /**
@@ -36,7 +75,7 @@ export class Queue {
      * @return The value at the front of the queue.
      */
     peek (): Number {
-        return null;
+        return this.head == null ? null : this.head.data;
     }
 
     /**
@@ -45,7 +84,11 @@ export class Queue {
      * @return The value at the front of the queue.
      */
     pop (): Number {
-        return null;
+        if (this.head == null) return null;
+        this.length--;
+        var data = this.head.data;
+        this.head = this.head.next;
+        return data;
     }
 
     /**
@@ -54,6 +97,13 @@ export class Queue {
      * @param n The element to add to the end of the queue.
      */
     push (n:number): void {
-
+        this.length++;
+        var current = this.head;
+        if (this.head == null) {
+            this.head = new Node(n);
+            return;
+        }
+        while (current.next != null) current = current.next;
+        current.next = new Node(n);
     }
 }
