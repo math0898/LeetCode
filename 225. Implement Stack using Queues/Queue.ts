@@ -74,7 +74,7 @@ export class Queue {
      * 
      * @return The value at the front of the queue.
      */
-    peek (): Number {
+    peek (): number | null {
         return this.head == null ? null : this.head.data;
     }
 
@@ -83,7 +83,7 @@ export class Queue {
      * 
      * @return The value at the front of the queue.
      */
-    pop (): Number {
+    pop (): number | null {
         if (this.head == null) return null;
         this.length--;
         var data = this.head.data;
