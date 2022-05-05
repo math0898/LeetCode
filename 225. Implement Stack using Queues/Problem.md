@@ -44,8 +44,12 @@ __Follow-up:__ Can you implement the stack using only one queue?
 
 ## Approach Two Queues
 
-Cycle the elements of the 'stack' between the two queues. Once at the last element it can be returned and not added to the other stack.
+Cycle the elements of the 'stack' between the two queues. Once at the last element it can be returned and not added to the other queue.
 
 ## Approach Single Queue
 
-Cycle elements through a single queue but keep track of the top-most element.
+Cycle elements through a single queue to return the 'top-most' element.
+
+[Submission](https://leetcode.com/submissions/detail/693836031/)
+
+[Commit](https://github.com/math0898/LeetCode/tree/34fbb3887de2b24f9dae83c086c2404a1dc1e07b)
